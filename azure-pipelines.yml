@@ -1,9 +1,5 @@
 # Starter pipeline
-- task: AzureStaticWebApp@0
-  inputs:
-    app_location: '/'
-    api_location: 'api'
-    azure_static_web_apps_api_token: 'd813ec32d5f09af61481e8dab34896f23a1f8df0dae2ef62ab4e1eef5fd7bcda0-197c106f-ed2d-48be-89b3-50699c95c13c00010224'
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -15,7 +11,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
+- task: AzureStaticWebApp@0
+  inputs:
+    app_location: '/'
+    api_location: 'api'
+    azure_static_web_apps_api_token: 'd813ec32d5f09af61481e8dab34896f23a1f8df0dae2ef62ab4e1eef5fd7bcda0-197c106f-ed2d-48be-89b3-50699c95c13c00010224'
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
